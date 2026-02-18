@@ -42,7 +42,7 @@ export default function MobileDrawer({ navItems, open, onClose }: MobileDrawerPr
 
 	return (
 		<Drawer
-			anchor="right"
+			anchor="left"
 			open={open}
 			onClose={() => {
 				setLanguageExpanded(false);
@@ -53,8 +53,8 @@ export default function MobileDrawer({ navItems, open, onClose }: MobileDrawerPr
 					width: "88vw",
 					maxWidth: "88vw",
 					boxSizing: "border-box",
-					right: 0,
-					left: "auto",
+					left: 0,
+					right: "auto",
 				},
 			}}
 			PaperProps={{ sx: { width: "88vw", maxWidth: "88vw" } }}
