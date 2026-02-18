@@ -51,11 +51,16 @@ export default function MobileDrawer({ navItems, open, onClose }: MobileDrawerPr
 			PaperProps={{ sx: { width: { xs: "100vw", sm: 360 } } }}
 		>
 			<Box sx={{ p: "18px", pt: "10px" }} role="presentation">
-				<Box sx={{ position: "relative", minHeight: 44, display: "flex", alignItems: "center" }}>
+				<Box sx={{ position: "relative", minHeight: 52, display: "flex", alignItems: "center" }}>
 					<IconButton
 						aria-label={t("close")}
 						onClick={onClose}
-						sx={{ position: "absolute", top: 0, right: 0 }}
+						sx={{
+							position: "absolute",
+							right: 0,
+							top: "50%",
+							transform: "translateY(-50%)",
+						}}
 					>
 						<CloseIcon />
 					</IconButton>
@@ -74,7 +79,7 @@ export default function MobileDrawer({ navItems, open, onClose }: MobileDrawerPr
 							component="img"
 							src="/logo.webp"
 							alt="Escoramento"
-							sx={{ maxHeight: 28, width: "auto", display: "block" }}
+							sx={{ maxHeight: 40, width: "auto", display: "block" }}
 						/>
 					</Box>
 				</Box>
