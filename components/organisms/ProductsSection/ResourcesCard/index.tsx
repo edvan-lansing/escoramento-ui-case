@@ -12,7 +12,7 @@ type ResourcesCardProps = {
 
 export default function ResourcesCard({ block }: ResourcesCardProps) {
 	return (
-		<Box key={block.title}>
+		<Box key={block.title} sx={{ px: "24px" }}>
 			<Heading
 				sx={{
 					mb: "12px",
@@ -39,7 +39,7 @@ export default function ResourcesCard({ block }: ResourcesCardProps) {
 						order: { xs: 1, md: 1 },
 						display: "flex",
 						alignItems: "center",
-						justifyContent: { xs: "flex-start", md: "center" },
+						justifyContent: { xs: "flex-start", md: "flex-start" },
 					}}
 				>
 					<Box
@@ -99,7 +99,7 @@ export default function ResourcesCard({ block }: ResourcesCardProps) {
 					sx={{
 						order: { xs: 2, md: 2 },
 						position: "relative",
-						minHeight: { xs: 160, md: 290 },
+						minHeight: { xs: 160, md: 290 }
 					}}
 				>
 					<Box

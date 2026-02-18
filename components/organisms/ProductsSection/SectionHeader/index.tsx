@@ -15,6 +15,8 @@ export default function SectionHeader({ title, subtitle }: SectionHeaderProps) {
             gap: "10px",
             mt: { xs: "48px", md: "96px" },
             mb: "32px",
+            ml : { xs: "16px", md: "24px" },
+            mr: { xs: "16px", md: "24px" },
             fontSize: { xs: "28.8px", md: "2.125rem" },
             fontWeight: 700,
             }}>

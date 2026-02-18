@@ -22,6 +22,7 @@ export default function FeaturedPromoCard({ block }: FeaturedPromoCardProps) {
             xs: theme.typography.heading.displaySm,
             md: theme.typography.heading.displayLg,
           },
+          pl: "24px",
         }}
       >
         {block.title}
@@ -30,8 +31,8 @@ export default function FeaturedPromoCard({ block }: FeaturedPromoCardProps) {
       <Box
         sx={{
           overflow: "hidden",
-          backgroundColor: {xs: theme.colors.surface, md: theme.colors.background},          
-          minHeight: { xs: "auto", md: 340 },
+          backgroundColor: theme.colors.background,
+          minHeight: { xs: 280, md: 340 },
           display: "grid",
           gridTemplateColumns: {
             xs: "1fr",
@@ -71,7 +72,7 @@ export default function FeaturedPromoCard({ block }: FeaturedPromoCardProps) {
             position: "relative",
             zIndex: 1,
             p: { xs: "18px", md: "30px" },
-            minHeight: { xs: "auto", md: 340 },
+            minHeight: { xs: 280, md: 340 },
             display: "flex",
             alignItems: "center",
             justifyContent: {
@@ -80,7 +81,6 @@ export default function FeaturedPromoCard({ block }: FeaturedPromoCardProps) {
             },
             ml: { xs: 0, md: isCredito ? "-20%" : 0 },
             mr: { xs: 0, md: isCredito ? 0 : "-20%" },
-            mt: { xs: "-36px", md: 0 },
           }}
         >
           <Box

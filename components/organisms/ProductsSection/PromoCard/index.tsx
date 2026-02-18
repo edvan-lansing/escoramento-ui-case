@@ -29,7 +29,7 @@ export default function PromoCard({ block }: PromoCardProps) {
         sx={{
           display: "grid",
           gridTemplateColumns: { xs: "1fr", md: "1.4fr 0.9fr" },
-          backgroundColor: {xs: theme.colors.surface, md: theme.colors.background},
+          backgroundColor: theme.colors.background,
           overflow: "hidden",
         }}
       >
@@ -55,16 +55,14 @@ export default function PromoCard({ block }: PromoCardProps) {
           sx={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
+            pr: "24px",
             ml: { xs: 0, md: "-10%" },
-			mt: { xs: "-16px", md: 0 },
             position: "relative",
             zIndex: 1,
           }}
         >
           <Box
             sx={{
-				width: { xs: "100%", md: "min(420px, 100%)" },
               backgroundColor: theme.colors.surface,
               borderRadius: theme.radius.lg,
               border: `2px solid ${theme.colors.borderSearch}`,
@@ -109,7 +107,8 @@ export default function PromoCard({ block }: PromoCardProps) {
 					{block.ctaLabel}
 				</Button>
 			</Box>
-           </Box>
+            
+          </Box>
         </Box>
       </Box>
     </Box>
