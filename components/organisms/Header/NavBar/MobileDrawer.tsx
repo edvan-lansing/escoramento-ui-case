@@ -246,6 +246,86 @@ export default function MobileDrawer({ navItems, open, onClose }: MobileDrawerPr
 							sx={{ pl: "18px", m: 0 }}
 						/>
 					</ListItemButton>
+					<ListItemButton
+						key="app-client-schedule"
+						component="a"
+						href={`${baseUrl}/schedule/`}
+						onClick={onClose}
+						sx={{
+							borderRadius: theme.radius.sm,
+							px: 0,
+							py: "6px",
+							"&:hover": { backgroundColor: "transparent" },
+						}}
+					>
+						<ListItemText
+							primary={tFooter("links.onlineScheduling")}
+							primaryTypographyProps={{
+								fontWeight: 400,
+								fontSize: theme.typography.text.lg,
+								color: theme.colors.textMuted,
+							}}
+							sx={{ pl: "18px", m: 0 }}
+						/>
+					</ListItemButton>
+					<ListItemButton
+						key="app-client-registration"
+						component="a"
+						href={`${baseUrl}/app/?tab=credit-analysis`}
+						onClick={onClose}
+						sx={{
+							borderRadius: theme.radius.sm,
+							px: 0,
+							py: "6px",
+							"&:hover": { backgroundColor: "transparent" },
+						}}
+					>
+						<ListItemText
+							primary={tFooter("links.registration")}
+							primaryTypographyProps={{
+								fontWeight: 400,
+								fontSize: theme.typography.text.lg,
+								color: theme.colors.textMuted,
+							}}
+							sx={{ pl: "18px", m: 0 }}
+						/>
+					</ListItemButton>
+
+					<Typography
+						key="support-channels-title"
+						sx={{
+							px: 0,
+							pt: "14px",
+							pb: "4px",
+							fontWeight: 600,
+							fontSize: theme.typography.text.xxl,
+							color: theme.colors.textPrimary,
+						}}
+					>
+						{tFooter("links.supportChannels")}
+					</Typography>
+					<ListItemButton
+						key="support-channels-chat"
+						component="a"
+						href="https://jivo.chat/1zu5Pw4Zji"
+						onClick={onClose}
+						sx={{
+							borderRadius: theme.radius.sm,
+							px: 0,
+							py: "6px",
+							"&:hover": { backgroundColor: "transparent" },
+						}}
+					>
+						<ListItemText
+							primary={tFooter("links.chatWithExpert")}
+							primaryTypographyProps={{
+								fontWeight: 400,
+								fontSize: theme.typography.text.lg,
+								color: theme.colors.textMuted,
+							}}
+							sx={{ pl: "18px", m: 0 }}
+						/>
+					</ListItemButton>
 				</List>
 			</Box>
 		</Drawer>
