@@ -31,7 +31,7 @@ export default function SearchBar({
 				display: "flex",
 				justifyContent: "center",
                 mt: { xs: "24px", md: "48px" },
-				px: { xs: "24px", md: 0 },
+				px: 0,
 			}}
 		>
 			<Box
