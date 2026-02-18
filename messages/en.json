@@ -1,12 +1,12 @@
 {
   "Topbar": {
     "phone": "0800 033 0327",
-    "schedule": "Schedule",
-    "register": "Sign up",
+    "schedule": "Booking",
+    "register": "App",
     "contact": "Contact"
   },
   "Nav": {
-    "equipment": "Equipment",
+    "equipment": "Equipments",
     "technicalMaterial": "Technical material",
     "about": "About",
     "rent": "Rent",

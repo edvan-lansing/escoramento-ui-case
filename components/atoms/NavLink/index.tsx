@@ -9,7 +9,11 @@ type Props = {
   fontWeight?: number;
 };
 
-export default function NavLink({ href, children, fontWeight = 600 }: Props) {
+export default function NavLink({
+  href,
+  children,
+  fontWeight = 500,
+}: Props) {
   return (
     <Typography
       component="a"
@@ -18,11 +22,12 @@ export default function NavLink({ href, children, fontWeight = 600 }: Props) {
       sx={{
         color: "inherit",
         textDecoration: "none",
-        fontWeight: "500",
+        fontWeight,
         fontSize: "inherit",
         position: "relative",
         cursor: "pointer",
-        pb: "2px",
+        display: "inline-block",
+
         "&::after": {
           content: '""',
           position: "absolute",
@@ -31,6 +36,7 @@ export default function NavLink({ href, children, fontWeight = 600 }: Props) {
           width: "0%",
           height: "1px",
           backgroundColor: "currentColor",
+          transition: "width ease",
         },
 
         "&:hover::after": {

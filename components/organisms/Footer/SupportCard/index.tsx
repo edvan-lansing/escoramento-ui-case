@@ -1,14 +1,11 @@
 import Box from "@mui/material/Box";
+import type { SxProps } from "@mui/material/styles";
 import { useTranslations } from "next-intl";
 import Text from "../../../atoms/Text";
 import theme from "../../../../styles/theme";
 
 type SupportCardProps = {
-  containerSx: {
-    maxWidth: string;
-    mx: string;
-    px: string;
-  };
+  containerSx: SxProps;
 };
 
 export default function SupportCard({ containerSx }: SupportCardProps) {

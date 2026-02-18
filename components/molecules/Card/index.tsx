@@ -10,10 +10,10 @@ export default function Card({ children, sx, ...props }: CardProps) {
 	return (
 		<Paper
 			variant="outlined"
-			sx={{
-				borderRadius: theme.radius.md,
+			sx={[
+				{ borderRadius: theme.radius.md },
 				...(Array.isArray(sx) ? sx : sx ? [sx] : []),
-			}}
+			]}
 			{...props}
 		>
 			{children}

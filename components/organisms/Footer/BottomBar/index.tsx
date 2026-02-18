@@ -1,15 +1,12 @@
 import Box from "@mui/material/Box";
+import type { SxProps } from "@mui/material/styles";
 import Text from "../../../atoms/Text";
 import theme from "@/styles/theme";
 import SocialLinks from "../SocialLinks";
 import { useLocale } from "next-intl";
 
 type BottomBarProps = {
-  containerSx: {
-    maxWidth: string;
-    mx: string;
-    px: string;
-  };
+  containerSx: SxProps;
   copyrightText: string;
 };
 

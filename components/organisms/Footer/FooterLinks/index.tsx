@@ -1,14 +1,11 @@
 import Box from "@mui/material/Box";
+import type { SxProps } from "@mui/material/styles";
 import { useLocale, useTranslations } from "next-intl";
 import Text from "../../../atoms/Text";
 import theme from "@/styles/theme";
 
 type FooterLinksProps = {
-  containerSx: {
-    maxWidth: string;
-    mx: string;
-    px: string;
-  };
+  containerSx: SxProps;
   linkSx: {
     color: string;
     textDecoration: string;

@@ -17,6 +17,7 @@ export default function PromoCard({ block }: PromoCardProps) {
         sx={{
           mb: "16px",
           pl: "24px",
+          ml: { xs: theme.layout.containerPadding, md: 0 },
           fontSize: {
             xs: theme.typography.heading.displaySm,
             md: theme.typography.heading.displayLg,
@@ -29,7 +30,6 @@ export default function PromoCard({ block }: PromoCardProps) {
         sx={{
           display: "grid",
           gridTemplateColumns: { xs: "1fr", md: "1.4fr 0.9fr" },
-          backgroundColor: theme.colors.background,
           overflow: "hidden",
         }}
       >
@@ -55,10 +55,10 @@ export default function PromoCard({ block }: PromoCardProps) {
           sx={{
             display: "flex",
             alignItems: "center",
-            pr: "24px",
-            ml: { xs: 0, md: "-10%" },
             position: "relative",
             zIndex: 1,
+            mt: { xs: "-18px", md: 0 },
+            px: { xs: "18px", md: 0 },
           }}
         >
           <Box
@@ -92,22 +92,25 @@ export default function PromoCard({ block }: PromoCardProps) {
             >
               {block.description}
             </Text>
-			<Box>
-				<Button
-					component="a"
-					href={block.href}
-					sx={{
-						backgroundColor: theme.colors.footer,
-						color: theme.colors.surface,
-						textTransform: "uppercase",
-						fontWeight: 500,
-						letterSpacing: "0.04em",
-					}}
-				>
-					{block.ctaLabel}
-				</Button>
-			</Box>
-            
+            <Box>
+              <Button
+                component="a"
+                href={block.href}
+                sx={{
+                  backgroundColor: theme.colors.footer,
+                  color: theme.colors.surface,
+                  textTransform: "uppercase",
+                  fontWeight: 500,
+                  letterSpacing: "0.04em",
+                  "&:hover": {
+                    backgroundColor: theme.colors.bottomBar,
+                    transform: "none",
+                  },
+                }}
+              >
+                {block.ctaLabel}
+              </Button>
+            </Box>
           </Box>
         </Box>
       </Box>
