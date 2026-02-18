@@ -71,7 +71,7 @@ export default function MobileDrawer({
       content: '""',
       position: "absolute",
       left: 0,
-      bottom: -4,
+      bottom: 0,
       width: "0%",
       height: "1px",
       backgroundColor: theme.colors.textMuted,

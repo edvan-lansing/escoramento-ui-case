@@ -18,11 +18,11 @@ export default function FeaturedPromoCard({ block }: FeaturedPromoCardProps) {
       <Heading
         sx={{
           mb: "12px",
+          pl: "24px",
           fontSize: {
             xs: theme.typography.heading.displaySm,
             md: theme.typography.heading.displayLg,
           },
-          pl: "24px",
         }}
       >
         {block.title}
@@ -31,8 +31,7 @@ export default function FeaturedPromoCard({ block }: FeaturedPromoCardProps) {
       <Box
         sx={{
           overflow: "hidden",
-          backgroundColor: theme.colors.background,
-          minHeight: { xs: 280, md: 340 },
+          minHeight: { xs: 300, md: 390 },
           display: "grid",
           gridTemplateColumns: {
             xs: "1fr",
@@ -48,7 +47,7 @@ export default function FeaturedPromoCard({ block }: FeaturedPromoCardProps) {
           sx={{
             gridArea: "image",
             position: "relative",
-            minHeight: { xs: 170, md: 340 },
+            minHeight: { xs: 200, md: 390 },
           }}
         >
           <Box
@@ -72,11 +71,12 @@ export default function FeaturedPromoCard({ block }: FeaturedPromoCardProps) {
             position: "relative",
             zIndex: 1,
             p: { xs: "18px", md: "30px" },
-            minHeight: { xs: 280, md: 340 },
+            minHeight: { xs: 200, md: 390 },
             display: "flex",
             alignItems: "center",
+            mt: { xs: "-28px", md: 0 },
             justifyContent: {
-              xs: "flex-start",
+              xs: "center",
               md: isCredito ? "flex-end" : "flex-start",
             },
             ml: { xs: 0, md: isCredito ? "-20%" : 0 },
@@ -85,7 +85,6 @@ export default function FeaturedPromoCard({ block }: FeaturedPromoCardProps) {
         >
           <Box
             sx={{
-              width: { xs: "100%", md: "min(420px, 100%)" },
               backgroundColor: theme.colors.surface,
               borderRadius: theme.radius.md,
               border: `1px solid ${theme.colors.border}`,
@@ -106,7 +105,7 @@ export default function FeaturedPromoCard({ block }: FeaturedPromoCardProps) {
             >
               {block.cardTitle ?? block.title}
             </Typography>
-            <Text $muted sx={{ maxWidth: 520, color: theme.colors.textPrimary }}>
+            <Text $muted sx={{ color: theme.colors.textPrimary }}>
               {block.description}
             </Text>
             <Box sx={{ mt: "6px" }}>

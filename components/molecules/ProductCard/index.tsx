@@ -41,8 +41,25 @@ export default function ProductCard({
         textDecoration: "none",
         color: "inherit",
         cursor: href ? "pointer" : "default",
-        ":hover": {
-          transform: "none",
+        position: "relative",
+        willChange: "transform",
+        transition: "transform 0.2s ease, box-shadow 0.2s ease",
+
+        "@media (hover: hover) and (pointer: fine)": {
+          "&:hover": {
+            transform: "translateY(-6px)",
+            boxShadow: theme.shadow.sm,
+          },
+        },
+
+        "&:active": {
+          transform: "translateY(-3px)",
+          boxShadow: theme.shadow.sm,
+        },
+
+        "&:focus-visible": {
+          transform: "translateY(-3px)",
+          boxShadow: theme.shadow.sm,
         },
       }}
     >
@@ -141,6 +158,7 @@ export default function ProductCard({
               ":hover": {
                 backgroundColor: theme.colors.bottomBar,
                 color: theme.colors.surface,
+                transform: "none",
               },
             }}
           >

@@ -48,6 +48,7 @@ export default function SearchBar({
 				}}
 			>
 				<TextField
+					id="products-search"
 					name="q"
 					size="small"
 					placeholder={resolvedPlaceholder}

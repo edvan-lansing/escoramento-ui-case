@@ -31,7 +31,7 @@ export default function ResourcesCard({ block }: ResourcesCardProps) {
                     border: `1px solid ${theme.colors.borderSearch}`,
 					display: "grid",
 					gridTemplateColumns: { xs: "1fr", md: "1fr 0.7fr" },
-					minHeight: { xs: 260, md: 290 }
+					minHeight: { xs: 300, md: 390 }
 				}}
 			>
 				<Box
@@ -88,6 +88,10 @@ export default function ResourcesCard({ block }: ResourcesCardProps) {
                                     color: theme.colors.surface,
 									textTransform: "uppercase",
 									fontWeight: 500,
+									"&:hover": {
+										backgroundColor: theme.colors.bottomBar,
+										transform: "none",
+									},
 								}}
 							>
 								{block.ctaLabel}
@@ -99,7 +103,7 @@ export default function ResourcesCard({ block }: ResourcesCardProps) {
 					sx={{
 						order: { xs: 2, md: 2 },
 						position: "relative",
-						minHeight: { xs: 160, md: 290 }
+						minHeight: { xs: 300, md: 390 }
 					}}
 				>
 					<Box

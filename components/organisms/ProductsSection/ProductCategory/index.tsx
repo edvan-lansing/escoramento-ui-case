@@ -17,6 +17,8 @@ export default function ProductCategory({
       <Box sx={{ display: "grid", gap: "14px", fontWeight: 700 }}>
         <Heading
           sx={{
+            px: "24px",
+            pt: "36px",
             fontSize: {
               xs: theme.typography.heading.lg,
               md: theme.typography.heading.displaySm,
@@ -24,7 +26,8 @@ export default function ProductCategory({
           }}
         >
           {title}
-        </Heading><ProductsGrid products={products} />
+        </Heading>
+        <ProductsGrid products={products} />
       </Box>
   );
 }

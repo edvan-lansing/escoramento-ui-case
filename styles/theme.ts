@@ -43,7 +43,7 @@ const theme = {
 
   layout: {
     containerMaxWidth: "100%",
-    containerPadding: "24px",
+    containerPadding: { xs: 0, md: "24px" },
   },
   radius: {
     xxsm: "2px",

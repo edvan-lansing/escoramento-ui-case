@@ -47,7 +47,10 @@ const globalStyles = {
     width: "100%",
     maxWidth: theme.layout.containerMaxWidth,
     margin: "0 auto",
-    padding: `0 ${theme.layout.containerPadding}`,
+    padding: 0,
+    "@media (min-width:900px)": {
+      padding: "0 24px",
+    },
   },
 } as const;
 

@@ -11,6 +11,7 @@ export default function ProductsGrid({ products }: ProductsGridProps) {
 		<Box
 			sx={{
 				display: "grid",
+				px: "24px",
 				gap: "24px",
 				gridTemplateColumns: {
 					xs: "repeat(2, minmax(0, 1fr))",
