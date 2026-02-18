@@ -50,12 +50,14 @@ export default function MobileDrawer({ navItems, open, onClose }: MobileDrawerPr
 			}}
 			sx={{
 				"& .MuiDrawer-paper": {
-					width: "100vw",
-					maxWidth: "100vw",
+					width: "88vw",
+					maxWidth: "88vw",
 					boxSizing: "border-box",
+					right: 0,
+					left: "auto",
 				},
 			}}
-			PaperProps={{ sx: { width: "100vw", maxWidth: "100vw" } }}
+			PaperProps={{ sx: { width: "88vw", maxWidth: "88vw" } }}
 		>
 			<Box sx={{ p: "18px", pt: "10px" }} role="presentation">
 				<Box sx={{ position: "relative", minHeight: 52, display: "flex", alignItems: "center" }}>
