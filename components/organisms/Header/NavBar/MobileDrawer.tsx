@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
@@ -51,9 +50,26 @@ export default function MobileDrawer({ navItems, open, onClose }: MobileDrawerPr
 			}}
 			PaperProps={{ sx: { width: { xs: "100vw", sm: 360 } } }}
 		>
-			<Box sx={{ p: "18px" }} role="presentation">
-				<Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-					<Box component={Link} href={`/${locale}`} onClick={onClose} sx={{ display: "flex" }}>
+			<Box sx={{ p: "18px", pt: "10px" }} role="presentation">
+				<Box sx={{ position: "relative", minHeight: 44, display: "flex", alignItems: "center" }}>
+					<IconButton
+						aria-label={t("close")}
+						onClick={onClose}
+						sx={{ position: "absolute", top: 0, right: 0 }}
+					>
+						<CloseIcon />
+					</IconButton>
+					<Box
+						component={Link}
+						href={`/${locale}`}
+						onClick={onClose}
+						sx={{
+							display: "flex",
+							width: "100%",
+							justifyContent: "center",
+							textDecoration: "none",
+						}}
+					>
 						<Box
 							component="img"
 							src="/logo.webp"
@@ -61,41 +77,49 @@ export default function MobileDrawer({ navItems, open, onClose }: MobileDrawerPr
 							sx={{ maxHeight: 28, width: "auto", display: "block" }}
 						/>
 					</Box>
-					<IconButton aria-label={t("close")} onClick={onClose}>
-						<CloseIcon />
-					</IconButton>
 				</Box>
 
-				<Box sx={{ mt: "10px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-					<Button
-						variant="text"
-						onClick={(event) => {
-							event.preventDefault();
-							setLanguageExpanded((prev) => !prev);
-						}}
-						startIcon={<LanguegeIcon size={18} aria-label={tActions("language")} />}
-						endIcon={<ExpandMoreIcon fontSize="small" />}
+				<Box sx={{ mt: "8px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+					<Box
 						sx={{
-							minWidth: 0,
-							px: 0,
-							py: "6px",
-							color: theme.colors.textPrimary,
-							fontWeight: 700,
-							textTransform: "none",
-							"& .MuiButton-endIcon": {
-								marginLeft: "6px",
-								transition: "transform 120ms ease",
-								transform: languageExpanded ? "rotate(180deg)" : "rotate(0deg)",
-							},
-							"&:hover": {
-								backgroundColor: "transparent",
-								transform: "none",
-								boxShadow: "none",
-							},
+							display: "inline-flex",
+							flexDirection: "column",
+							alignItems: "flex-start",
+							pb: "2px",
+							borderBottom: `1px solid ${theme.colors.border}`,
 						}}
 					>
-						{currentLanguageLabel}
-					</Button>
+						<Button
+							variant="text"
+							onClick={(event) => {
+								event.preventDefault();
+								setLanguageExpanded((prev) => !prev);
+							}}
+							startIcon={<LanguegeIcon size={18} aria-label={currentLanguageLabel} />}
+							endIcon={<ExpandMoreIcon fontSize="small" />}
+							sx={{
+								minWidth: 0,
+								px: 0,
+								py: "6px",
+								color: theme.colors.textPrimary,
+								fontWeight: 600,
+								fontSize: theme.typography.text.xxl,
+								textTransform: "none",
+								"& .MuiButton-endIcon": {
+									marginLeft: "4px",
+									transition: "transform 120ms ease",
+									transform: languageExpanded ? "rotate(180deg)" : "rotate(0deg)",
+								},
+								"&:hover": {
+									backgroundColor: "transparent",
+									transform: "none",
+									boxShadow: "none",
+								},
+							}}
+						>
+							{currentLanguageLabel}
+						</Button>
+					</Box>
 
 					<Button
 						component="a"
@@ -134,7 +158,7 @@ export default function MobileDrawer({ navItems, open, onClose }: MobileDrawerPr
 								setLanguageExpanded(false);
 								onClose();
 							}}
-							sx={{ borderRadius: theme.radius.sm, px: 0, py: "6px" }}
+							sx={{ borderRadius: theme.radius.sm, px: 0, py: "6px", "&:hover": { backgroundColor: "transparent" } }}
 						>
 							<ListItemText
 								primary={otherLanguageLabel}
@@ -144,7 +168,7 @@ export default function MobileDrawer({ navItems, open, onClose }: MobileDrawerPr
 					</Box>
 				) : null}
 
-				<Divider sx={{ my: "14px" }} />
+				<Box sx={{ mt: "14px" }} />
 
 				<List sx={{ p: 0 }}>
 					{navItems.flatMap((nav) => [
@@ -152,10 +176,10 @@ export default function MobileDrawer({ navItems, open, onClose }: MobileDrawerPr
 							key={`${nav.label}-title`}
 							sx={{
 								px: 0,
-								pt: "10px",
+								pt: "12px",
 								pb: "4px",
-								fontWeight: 700,
-								fontSize: theme.typography.text.base,
+								fontWeight: 600,
+								fontSize: theme.typography.text.xxl,
 								color: theme.colors.textPrimary,
 							}}
 						>
@@ -178,10 +202,10 @@ export default function MobileDrawer({ navItems, open, onClose }: MobileDrawerPr
 									primary={item.label}
 									primaryTypographyProps={{
 										fontWeight: 400,
-										fontSize: theme.typography.text.xxl,
+										fontSize: theme.typography.text.lg,
 										color: theme.colors.textMuted,
 									}}
-									sx={{ pl: "16px", m: 0 }}
+									sx={{ pl: "18px", m: 0 }}
 								/>
 							</ListItemButton>
 						)),
@@ -193,8 +217,8 @@ export default function MobileDrawer({ navItems, open, onClose }: MobileDrawerPr
 							px: 0,
 							pt: "14px",
 							pb: "4px",
-							fontWeight: 700,
-							fontSize: theme.typography.text.base,
+							fontWeight: 600,
+							fontSize: theme.typography.text.xxl,
 							color: theme.colors.textPrimary,
 						}}
 					>
@@ -216,10 +240,10 @@ export default function MobileDrawer({ navItems, open, onClose }: MobileDrawerPr
 							primary={tFooter("links.budgets")}
 							primaryTypographyProps={{
 								fontWeight: 400,
-								fontSize: theme.typography.text.xxl,
+								fontSize: theme.typography.text.lg,
 								color: theme.colors.textMuted,
 							}}
-							sx={{ pl: "16px", m: 0 }}
+							sx={{ pl: "18px", m: 0 }}
 						/>
 					</ListItemButton>
 				</List>
