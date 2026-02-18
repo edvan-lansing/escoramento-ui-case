@@ -19,7 +19,15 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@atoms": ["./components/atoms/index"],
+      "@atoms/*": ["./components/atoms/*"],
+      "@molecules": ["./components/molecules/index"],
+      "@molecules/*": ["./components/molecules/*"],
+      "@organisms": ["./components/organisms/index"],
+      "@organisms/*": ["./components/organisms/*"],
+      "@templates": ["./components/templates/index"],
+      "@templates/*": ["./components/templates/*"]
     }
   },
   "include": [

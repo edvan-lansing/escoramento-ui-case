@@ -16,6 +16,17 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Chat widget
+
+This clone supports an optional JivoChat widget.
+
+- Create a `.env.local` file (or copy from `.env.example`)
+- Set `NEXT_PUBLIC_JIVOCHAT_ID` to your widget id
+
+Example:
+
+`NEXT_PUBLIC_JIVOCHAT_ID=YOUR_WIDGET_ID`
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
