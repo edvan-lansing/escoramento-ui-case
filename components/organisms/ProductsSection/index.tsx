@@ -176,7 +176,6 @@ export default function ProductsSection({
         <Box sx={{ mt: { xs: "44px", md: "56px" }, display: "grid", gap: "26px" }}>
           <PromoCard block={materialTecnicoBlock} />
           <ResourcesCard block={recursosBlock} />
-
           {featuredPromoBlocks.map((block) => (
             <FeaturedPromoCard key={block.id} block={block} />
           ))}
